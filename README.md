@@ -8,13 +8,14 @@ Please read the entire problem before commencing.
 * We are writing an application that displays a list of doctors to the user.
 * We have access to a Location API with a number of methods:
   * `fetchDoctors()`
-  * `getDistance( pointA, pointB ) `
+  * `getDistance( pointA, pointB )`
   * `getCurrentLocation()`
 * Each Doctor contains a list of one or more Locations where they practice.
 * Each Location contains a Point that includes `lat` and `long` coordinates.
 * Further documentation of the Location API is available below.
 
 ### Your assignment
+Use this starter project to:
 1. Retrieve the list of doctors
 2. Retrieve the user's location
 3. Write a function `sortDoctorsByDistance` that returns a sorted list of doctors based on which doctor has the closest location to the user.
@@ -34,12 +35,13 @@ Please read the entire problem before commencing.
 ### Data Types
 ```js
 POINT_OBJECT = { lat: NUMBER, long: NUMBER }
-DATA_OBJECT = {
+DOCTOR_OBJECT = {
     name: STRING,
-    location: {
-        address: STRING,
-        coordinates: POINT_OBJECT
-    }
+    locations: [ LOCATION_OBJECT ]
+}
+LOCATION_OBJECT = {
+    address: STRING,
+    coordinates: POINT_OBJECT
 }
 ```
 
@@ -48,7 +50,7 @@ DATA_OBJECT = {
 Fetch multiple people with location information and name
 
 * Input Params: None
-* Returns `Promise <[DATA_OBJECT]>`
+* Returns `Promise <[DOCTOR_OBJECT]>`
 
 ### `getDistance`
 
@@ -71,4 +73,4 @@ console.log( distance ); // 2.92
 Gets the user's current location
 
 * Input Params: None
-* Returns `Promise <PointObject>`
+* Returns `Promise <POINT_OBJECT>`
