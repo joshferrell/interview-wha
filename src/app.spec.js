@@ -1,8 +1,8 @@
-import app from './app';
-import { testSort } from 'whasome-interview-api';
+import { sortDoctorsByDistance } from './app';
+import sortedDoctors  from './sorted-doctors';
 
 describe('doctor sorting', () => {
     it('should return an array of sorted doctors', () => {
-        return expect(app()).resolves.toMatchSnapshot();
+        return expect(sortDoctorsByDistance()).resolves.toEqual(sortedDoctors);
     });
 });

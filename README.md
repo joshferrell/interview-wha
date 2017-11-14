@@ -19,7 +19,7 @@ Use this starter project to:
 1. Retrieve the list of doctors
 2. Retrieve the user's location
 3. Write a function `sortDoctorsByDistance` that returns a sorted list of doctors based on which doctor has the closest location to the user.
-    * The sorted list of doctors should also include a `distance` property in each doctor's `location` property. The distance property should be the value returned by `getDistance`.
+    * The sorted list of doctors should also include a `distance` property in each doctor's `practices` property. The distance property should be the value returned by `getDistance`.
 
 #### Additional Notes
 * You do not need to provide a user interface. `console.log()` is just fine.
@@ -37,11 +37,11 @@ Use this starter project to:
 POINT_OBJECT = { lat: NUMBER, long: NUMBER }
 DOCTOR_OBJECT = {
     name: STRING,
-    locations: [ LOCATION_OBJECT ]
+    practices: [ LOCATION_OBJECT ]
 }
 LOCATION_OBJECT = {
     address: STRING,
-    coordinates: POINT_OBJECT
+    point: POINT_OBJECT
 }
 ```
 
